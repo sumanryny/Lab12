@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+double foo()
+{
+	double x;
+	x=(sqrt(8)+15)/(sqrt(15)+8)+(sqrt(6)+12)/(sqrt(12)+6)+(sqrt(7)+21)/(sqrt(21)+7);
+	return x;
+}
+
+
+
+
+
+int main()
+{
+	setlocale(0,"ru");
+	
+	cout << "x = " << foo();
+	system("pause");
+return 0;
+}

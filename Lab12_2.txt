@@ -1,0 +1,59 @@
+#include <iostream>
+
+using namespace std;
+
+void foo(int arr[],int h)
+{
+	cout << "введите массив" << endl;
+	for(int i=0;i<h;i++)
+	{
+	cin >> arr[i];
+	
+	}
+}
+void minf(int arr[],int h,int *min, int *max)
+{
+	
+	for (int i=0;i<h;i++)
+	{
+	if (*min > arr[i])
+		*min=arr[i];
+	if (*max < arr[i])
+		*max=arr[i];
+	}
+	
+}
+
+
+int main()
+{
+	setlocale(0,"ru");
+	cout <<endl;
+	int g;
+	cout << "введите размер массива" << endl;
+	cin >> g;
+	int *arr=new int[g];
+	foo(arr,g);
+	int min=arr[0];
+	int max=arr[0];
+	minf(arr,g,&min,&max);
+	cout <<"исправленный массив "<<endl;
+	for (int i=0;i<g;i++)
+	{
+	if (arr[i]==min)
+	{
+		arr[i]=max;
+		cout <<arr[i]<<" ";
+		continue;
+	}
+	if (arr[i]==max)
+		{
+			arr[i]=min;
+		cout <<arr[i]<<" ";
+		continue;
+		}
+	cout <<arr[i]<<" ";
+	}
+	system("pause");
+return 0;
+}
